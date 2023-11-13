@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="conception">
+      <UniqueIdentifier>{5c634a47-fa39-4de4-bbc6-0ef49f086062}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system">
+      <UniqueIdentifier>{06343183-b9ea-476f-adca-d75b34a1c5ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="metaclass">
+      <UniqueIdentifier>{67f9032c-a9bb-40ab-b28d-7e8236e21ebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pattern">
+      <UniqueIdentifier>{6e8b54eb-55b6-4556-aa0a-e2a34de1d0d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="software">
+      <UniqueIdentifier>{05b9f035-1aee-4161-9dd2-df1a4ba93a38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="universe">
+      <UniqueIdentifier>{6cbd38ba-84a3-4250-b55f-5e722f65e854}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="universe\math">
+      <UniqueIdentifier>{912336ef-2d87-4bf7-8066-ac10e7de053d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="universe\math\algorithm">
+      <UniqueIdentifier>{6a7960a7-8bdc-41b7-8c21-0ce24ff6e05e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="universe\life">
+      <UniqueIdentifier>{43d25e99-ac1d-4dc5-8b3a-f01ce51eccec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="universe\soul">
+      <UniqueIdentifier>{d316a0dd-fdb6-444e-b496-f4b535abc10c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="universe\info">
+      <UniqueIdentifier>{e58a010f-20e2-4275-a52d-064ebad9ff96}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="head.h" />
+    <ClInclude Include="xhqm.h" />
+    <ClInclude Include="software\action.h">
+      <Filter>software</Filter>
+    </ClInclude>
+    <ClInclude Include="software\command.h">
+      <Filter>software</Filter>
+    </ClInclude>
+    <ClInclude Include="software\mousekey_events.h">
+      <Filter>software</Filter>
+    </ClInclude>
+    <ClInclude Include="software\page.h">
+      <Filter>software</Filter>
+    </ClInclude>
+    <ClInclude Include="software\signal.h">
+      <Filter>software</Filter>
+    </ClInclude>
+    <ClInclude Include="software\signalslot_events.h">
+      <Filter>software</Filter>
+    </ClInclude>
+    <ClInclude Include="system\codesys.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="system\libmange.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="system\filesys.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="system\timesys.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\math\algorithm\analysis.h">
+      <Filter>universe\math\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\math\algorithm\crc.h">
+      <Filter>universe\math\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\math\algorithm\extremum.h">
+      <Filter>universe\math\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\math\algorithm\geometry.h">
+      <Filter>universe\math\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="conception\event.h">
+      <Filter>conception</Filter>
+    </ClInclude>
+    <ClInclude Include="conception\exist.h">
+      <Filter>conception</Filter>
+    </ClInclude>
+    <ClInclude Include="conception\plugin.h">
+      <Filter>conception</Filter>
+    </ClInclude>
+    <ClInclude Include="conception\queues.h">
+      <Filter>conception</Filter>
+    </ClInclude>
+    <ClInclude Include="conception\stacks.h">
+      <Filter>conception</Filter>
+    </ClInclude>
+    <ClInclude Include="conception\struct.h">
+      <Filter>conception</Filter>
+    </ClInclude>
+    <ClInclude Include="metaclass\class_type.h">
+      <Filter>metaclass</Filter>
+    </ClInclude>
+    <ClInclude Include="metaclass\compute.h">
+      <Filter>metaclass</Filter>
+    </ClInclude>
+    <ClInclude Include="metaclass\symbols_has.h">
+      <Filter>metaclass</Filter>
+    </ClInclude>
+    <ClInclude Include="metaclass\template.h">
+      <Filter>metaclass</Filter>
+    </ClInclude>
+    <ClInclude Include="metaclass\tuple.h">
+      <Filter>metaclass</Filter>
+    </ClInclude>
+    <ClInclude Include="conception\element.h">
+      <Filter>universe\math</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\math\gather.h">
+      <Filter>universe\math</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\math\matrix.h">
+      <Filter>universe\math</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\math\number.h">
+      <Filter>universe\math</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\math\point.h">
+      <Filter>universe\math</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern\instance.h">
+      <Filter>pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern\observer.h">
+      <Filter>pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\soul\function.h">
+      <Filter>universe\soul</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\soul\layer.h">
+      <Filter>universe\soul</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\soul\soul.h">
+      <Filter>universe\soul</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\life\nurbs.h">
+      <Filter>universe\life</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\life\pointcloud.h">
+      <Filter>universe\life</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\life\shape.h">
+      <Filter>universe\life</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\math\algorithm\ransac.h">
+      <Filter>universe\math\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\math\vector.h">
+      <Filter>universe\math</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\info\stlfile.h">
+      <Filter>universe\info</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\info\csvfile.h">
+      <Filter>universe\info</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\info\fileinfo.h">
+      <Filter>universe\info</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\info\igesfile.h">
+      <Filter>universe\info</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\info\infomation.h">
+      <Filter>universe\info</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\info\stepfile.h">
+      <Filter>universe\info</Filter>
+    </ClInclude>
+    <ClInclude Include="conception\colors.h">
+      <Filter>conception</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\info\xcfg.h">
+      <Filter>universe\info</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\info\xlog.h">
+      <Filter>universe\info</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="software\action.cpp">
+      <Filter>software</Filter>
+    </ClCompile>
+    <ClCompile Include="software\command.cpp">
+      <Filter>software</Filter>
+    </ClCompile>
+    <ClCompile Include="software\mousekey_events.cpp">
+      <Filter>software</Filter>
+    </ClCompile>
+    <ClCompile Include="software\page.cpp">
+      <Filter>software</Filter>
+    </ClCompile>
+    <ClCompile Include="software\signal.cpp">
+      <Filter>software</Filter>
+    </ClCompile>
+    <ClCompile Include="software\signalslot_events.cpp">
+      <Filter>software</Filter>
+    </ClCompile>
+    <ClCompile Include="system\codesys.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\filesys.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\libmange.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\timesys.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\math\algorithm\crc.cpp">
+      <Filter>universe\math\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\math\algorithm\geometry.cpp">
+      <Filter>universe\math\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="pattern\instance.cpp">
+      <Filter>pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="pattern\observer.cpp">
+      <Filter>pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\life\nurbs.cpp">
+      <Filter>universe\life</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\math\algorithm\ransac.cpp">
+      <Filter>universe\math\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\info\csvfile.cpp">
+      <Filter>universe\info</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\info\fileinfo.cpp">
+      <Filter>universe\info</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\info\igesfile.cpp">
+      <Filter>universe\info</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\info\infomation.cpp">
+      <Filter>universe\info</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\info\stepfile.cpp">
+      <Filter>universe\info</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\info\stlfile.cpp">
+      <Filter>universe\info</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\info\xcfg.cpp">
+      <Filter>universe\info</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\info\xlog.cpp">
+      <Filter>universe\info</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

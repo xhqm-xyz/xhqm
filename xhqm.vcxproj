@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{0d2162ff-0574-4648-b9a0-a560d5f2b563}</ProjectGuid>
+    <RootNamespace>xhqm</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>../public/</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>../public/</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>XHQM_PROGRAM;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>XHQM_PROGRAM;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="conception\colors.h" />
+    <ClInclude Include="conception\element.h" />
+    <ClInclude Include="conception\event.h" />
+    <ClInclude Include="conception\exist.h" />
+    <ClInclude Include="conception\plugin.h" />
+    <ClInclude Include="conception\queues.h" />
+    <ClInclude Include="conception\stacks.h" />
+    <ClInclude Include="conception\struct.h" />
+    <ClInclude Include="head.h" />
+    <ClInclude Include="metaclass\class_type.h" />
+    <ClInclude Include="metaclass\compute.h" />
+    <ClInclude Include="metaclass\symbols_has.h" />
+    <ClInclude Include="metaclass\template.h" />
+    <ClInclude Include="metaclass\tuple.h" />
+    <ClInclude Include="pattern\instance.h" />
+    <ClInclude Include="pattern\observer.h" />
+    <ClInclude Include="software\action.h" />
+    <ClInclude Include="software\command.h" />
+    <ClInclude Include="software\mousekey_events.h" />
+    <ClInclude Include="software\page.h" />
+    <ClInclude Include="software\signal.h" />
+    <ClInclude Include="software\signalslot_events.h" />
+    <ClInclude Include="system\codesys.h" />
+    <ClInclude Include="system\filesys.h" />
+    <ClInclude Include="system\libmange.h" />
+    <ClInclude Include="system\timesys.h" />
+    <ClInclude Include="universe\info\csvfile.h" />
+    <ClInclude Include="universe\info\fileinfo.h" />
+    <ClInclude Include="universe\info\igesfile.h" />
+    <ClInclude Include="universe\info\infomation.h" />
+    <ClInclude Include="universe\info\stepfile.h" />
+    <ClInclude Include="universe\info\stlfile.h" />
+    <ClInclude Include="universe\info\xcfg.h" />
+    <ClInclude Include="universe\info\xlog.h" />
+    <ClInclude Include="universe\life\nurbs.h" />
+    <ClInclude Include="universe\life\pointcloud.h" />
+    <ClInclude Include="universe\life\shape.h" />
+    <ClInclude Include="universe\math\algorithm\analysis.h" />
+    <ClInclude Include="universe\math\algorithm\crc.h" />
+    <ClInclude Include="universe\math\algorithm\extremum.h" />
+    <ClInclude Include="universe\math\algorithm\geometry.h" />
+    <ClInclude Include="universe\math\algorithm\ransac.h" />
+    <ClInclude Include="universe\math\gather.h" />
+    <ClInclude Include="universe\math\matrix.h" />
+    <ClInclude Include="universe\math\number.h" />
+    <ClInclude Include="universe\math\point.h" />
+    <ClInclude Include="universe\math\vector.h" />
+    <ClInclude Include="universe\soul\function.h" />
+    <ClInclude Include="universe\soul\layer.h" />
+    <ClInclude Include="universe\soul\soul.h" />
+    <ClInclude Include="xhqm.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pattern\instance.cpp" />
+    <ClCompile Include="pattern\observer.cpp" />
+    <ClCompile Include="software\action.cpp" />
+    <ClCompile Include="software\command.cpp" />
+    <ClCompile Include="software\mousekey_events.cpp" />
+    <ClCompile Include="software\page.cpp" />
+    <ClCompile Include="software\signal.cpp" />
+    <ClCompile Include="software\signalslot_events.cpp" />
+    <ClCompile Include="system\codesys.cpp" />
+    <ClCompile Include="system\filesys.cpp" />
+    <ClCompile Include="system\libmange.cpp" />
+    <ClCompile Include="system\timesys.cpp" />
+    <ClCompile Include="universe\info\csvfile.cpp" />
+    <ClCompile Include="universe\info\fileinfo.cpp" />
+    <ClCompile Include="universe\info\igesfile.cpp" />
+    <ClCompile Include="universe\info\infomation.cpp" />
+    <ClCompile Include="universe\info\stepfile.cpp" />
+    <ClCompile Include="universe\info\stlfile.cpp" />
+    <ClCompile Include="universe\info\xcfg.cpp" />
+    <ClCompile Include="universe\info\xlog.cpp" />
+    <ClCompile Include="universe\life\nurbs.cpp" />
+    <ClCompile Include="universe\math\algorithm\crc.cpp" />
+    <ClCompile Include="universe\math\algorithm\geometry.cpp" />
+    <ClCompile Include="universe\math\algorithm\ransac.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
