@@ -26,8 +26,14 @@ software
   
 universe
 	信息流动、算法处理、数学、物理、生物... 分为数个不同领域
+ 
 	info 信息流入流出组件
+ 
 	math 数学、算法组件
+ 
 	life 空间渲染组件
+ 
 	soul 人工智能组件
+ 
 	game 游戏组件
+ 
