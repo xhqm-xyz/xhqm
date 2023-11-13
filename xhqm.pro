@@ -29,7 +29,6 @@ HEADERS += \
     conception/queues.h \
     conception/stacks.h \
     conception/struct.h \
-    head.h \
     metaclass/class_type.h \
     metaclass/compute.h \
     metaclass/symbols_has.h \
@@ -65,6 +64,7 @@ HEADERS += \
     universe/math/number.h \
     universe/math/point.h \
     universe/math/vector.h \
+    head.h \
     xhqm.h
 
 SOURCES += \
