@@ -33,6 +33,7 @@ HEADERS += \
     metaclass/compute.h \
     metaclass/symbols_has.h \
     metaclass/template.h \
+	metaclass/object.h \
     metaclass/tuple.h \
     pattern/instance.h \
     pattern/observer.h \

@@ -10,6 +10,10 @@ namespace xhqm {
 
 	inline namespace templates{
 
+		//bool
+		template <class> constexpr bool always_true = true;
+		template <class> constexpr bool always_false = false;
+
 		//计数
 		template<class ...type_arg> constexpr xhqm::size size_count = sizeof...(type_arg);
 
@@ -61,6 +65,20 @@ namespace xhqm {
 		using hyper_few = typename hyper_s<type_in, dims...>::type;
 		template<class type_in, xhqm::size dim, xhqm::size ...dims>
 		using hyper_more = typename hyper_s<type_in, 1, dim, dims...>::type;
+
+		//函数拆解
+		template <class type>
+		struct ret_function_args {
+			static_assert(xhqm::always_false<type>, "that is not function.");
+		};
+
+		template <class ret_type, class... arg_types>
+		struct ret_function_args<ret_type(arg_types...)>
+		{
+			using return_type = ret_type;
+			template <xhqm::size index> using type_get
+				= typename xhqm::select_index<index, arg_types...>::type;
+		};
 
 	}
 

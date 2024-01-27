@@ -458,6 +458,32 @@ namespace xhqm
     template<typename type, bool isdou = true, class pathData = void, template<class> class dockerType = xtd::vector>
 	using mesh = xhqm::select_if_type<isdou, doubly_mesh<type, pathData, dockerType>, singly_mesh<type, pathData, dockerType>>;
 
+	//继承用网类型
+	struct derive_mesh_s { virtual ~derive_mesh_s() {}; virtual void forbid_use() = 0; };
+
+	template<class derive_data_type, template<class> class derive_mesh_type>
+	struct derive_mesh_t : public xhqm::derive_mesh_s, protected xhqm::doubly_mesh<xhqm::derive_mesh_s*>
+	{
+		using mesh_type = xhqm::doubly_mesh<xhqm::derive_mesh_s*>;
+		using mesh_ptr = derive_data_type*;
+
+		void insert(mesh_ptr ptr)
+		{
+			mesh_type::insert(ptr);
+		}
+		void remove(mesh_ptr ptr)
+		{
+			mesh_type::remove(ptr);
+		}
+		mesh_ptr derive_node_this() { return static_cast<mesh_ptr>(this); }
+	};
+
+	template<typename derive_data>
+	struct derive_mesh : public xhqm::derive_mesh_t<derive_data, derive_mesh>
+	{
+		virtual void forbid_use() {};
+	};
+
 
 
 	//树
@@ -515,14 +541,14 @@ namespace xhqm
 		}
 
 		constexpr treePtr root() {
-			treePtr rootptr = this;
+			treePtr rootptr = (treePtr)this;
 			while (rootptr->m_parent)
 				rootptr = rootptr->m_parent;
 			return rootptr;
 		}
 
 		constexpr const treePtr root() const {
-			treePtr rootptr = this;
+			treePtr rootptr = (treePtr)this;
 			while (rootptr->m_parent)
 				rootptr = rootptr->m_parent;
 			return rootptr;
@@ -735,8 +761,45 @@ namespace xhqm
 		}
 	};
 
+
     template<typename type, template<class> class dockerType = xtd::vector>
 	using tree = docker_tree<type, dockerType>;
+
+	//继承用树类型
+	struct derive_tree_s { virtual ~derive_tree_s() {}; virtual void forbid_use() = 0; };
+
+	template<class derive_data_type, template<class> class derive_tree_type>
+	struct derive_tree_t : public xhqm::derive_tree_s, protected xhqm::docker_tree<xhqm::derive_tree_s*>
+	{
+		using tree_type = xhqm::docker_tree<xhqm::derive_tree_s*>;
+		using tree_ptr = derive_data_type*;
+
+		void insert(tree_ptr ptr)
+		{
+			tree_type::insert(ptr);
+		}
+		tree_ptr remove(const xhqm::size& pos)
+		{
+			return static_cast<tree_ptr>(tree_type::remove(pos));
+		}
+		tree_ptr derive_node_this() { return static_cast<tree_ptr>(this); }
+		tree_ptr derive_node_root() { return static_cast<tree_ptr>(tree_type::root()); }
+		tree_ptr derive_node_parent() { return static_cast<tree_ptr>(tree_type::parent()); }
+		tree_ptr derive_node_child(xhqm::size pos) { return static_cast<tree_ptr>(tree_type::child(pos)); }
+		std::vector<tree_ptr> object_tree_childs()
+		{
+			std::vector<tree_ptr> derive_tree_childs;
+			std::vector<tree_type*> tree_childs = tree_type::childs();
+			for (auto& ptr : tree_childs) derive_tree_childs.push_back(static_cast<tree_ptr>(ptr));
+			return derive_tree_childs;
+		}
+	};
+
+	template<typename derive_data>
+	struct derive_tree : public xhqm::derive_tree_t<derive_data, derive_tree>
+	{
+		virtual void forbid_use() {};
+	};
 
 
 
@@ -1000,8 +1063,11 @@ namespace xhqm
 		}
 	};
 
+
 	template<typename type, bool isdou = true>
 	using list = xhqm::select_if_type<isdou, doubly_list<type>, singly_list<type>>;
+
+
 
 	template<typename nodeType, typename funType>
 	void forNode(nodeType*& nodeptr, funType fun) {

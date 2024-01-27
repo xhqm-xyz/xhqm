@@ -34,6 +34,12 @@
     <Filter Include="universe\info">
       <UniqueIdentifier>{e58a010f-20e2-4275-a52d-064ebad9ff96}</UniqueIdentifier>
     </Filter>
+    <Filter Include="universe\game">
+      <UniqueIdentifier>{96e8740f-110a-4312-885c-e71b1c9b5635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="universe\math\algorithm\forecast">
+      <UniqueIdentifier>{0661e82b-558b-4666-a56e-53271bc1803c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="head.h" />
@@ -185,6 +191,36 @@
     <ClInclude Include="universe\info\xlog.h">
       <Filter>universe\info</Filter>
     </ClInclude>
+    <ClInclude Include="metaclass\object.h">
+      <Filter>metaclass</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\game\game_head.h">
+      <Filter>universe\game</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\game\rpg_astar.h">
+      <Filter>universe\game</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\game\rpg_fsearch.h">
+      <Filter>universe\game</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\game\rpg_game.h">
+      <Filter>universe\game</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\game\rpg_path.h">
+      <Filter>universe\game</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\game\rts_game.h">
+      <Filter>universe\game</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\game\slg_game.h">
+      <Filter>universe\game</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\math\algorithm\forecast\autoregression.h">
+      <Filter>universe\math\algorithm\forecast</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\math\algorithm\forecast\forecast.h">
+      <Filter>universe\math\algorithm\forecast</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="software\action.cpp">
@@ -258,6 +294,24 @@
     </ClCompile>
     <ClCompile Include="universe\info\xlog.cpp">
       <Filter>universe\info</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\game\rpg_astar.cpp">
+      <Filter>universe\game</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\game\rpg_fsearch.cpp">
+      <Filter>universe\game</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\game\rpg_game.cpp">
+      <Filter>universe\game</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\game\rts_game.cpp">
+      <Filter>universe\game</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\game\slg_game.cpp">
+      <Filter>universe\game</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\math\algorithm\forecast\autoregression.cpp">
+      <Filter>universe\math\algorithm\forecast</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
