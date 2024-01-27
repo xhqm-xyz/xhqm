@@ -1,42 +1,50 @@
-cmake_minimum_required(VERSION 3.5)
-
+# cmake最低版本要求
+cmake_minimum_required(VERSION 3.5) 
+# 设置项目名称及版本
 project(xhqm VERSION 0.1 LANGUAGES CXX)
 
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-
+# 设置c++版本为17
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+# 设置发布模式
+# set(CMAKE_BUILD_TYPE Debug)			调试模式，完全不优化，生成调试信息，方便调试程序
+# set(CMAKE_BUILD_TYPE Release)			发布模式，优化程度最高，性能最佳，但是编译比 Debug 慢
+# set(CMAKE_BUILD_TYPE MinSizeRel)		最小体积发布，生成的文件比 Release 更小，不完全优化，减少体积
+# set(CMAKE_BUILD_TYPE RelWithDebInfo)	带调试信息发布，Release带有调试的符号信息，使用程序出错时，能够反馈一些信息
+if (NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
 
 set(PROJECT_SOURCES
         head.h
         xhqm.h
 )
-
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(xhqm
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-        conception/element.h
+set(PROJECT_SOURCES
+		conception/element.h
         conception/event.h
         conception/exist.h
         conception/plugin.h
         conception/queues.h
         conception/stacks.h
         conception/struct.h
+)
+set(PROJECT_SOURCES
         metaclass/class_type.h
         metaclass/compute.h
         metaclass/symbols_has.h
         metaclass/template.h
         metaclass/tuple.h
+)
+set(PROJECT_SOURCES
         pattern/instance.cpp
         pattern/instance.h
         pattern/observer.cpp
         pattern/observer.h
+)
+set(PROJECT_SOURCES
         software/page.cpp
         software/page.h
         software/action.cpp
@@ -45,10 +53,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         software/command.h
         software/mousekey_events.cpp
         software/mousekey_events.h
-	software/signal.cpp
+		software/signal.cpp
         software/signal.h
         software/signalslot_events.cpp
         software/signalslot_events.h
+)
+set(PROJECT_SOURCES
         system/codesys.cpp
         system/codesys.h
         system/filesys.cpp
@@ -57,6 +67,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         system/libmange.h
         system/timesys.cpp
         system/timesys.h
+)
+set(PROJECT_SOURCES
         universe/life/nurbs.cpp
         universe/life/nurbs.h
         universe/life/pointcloud.h
@@ -74,48 +86,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         universe/math/algorithm/geometry.h
         universe/math/algorithm/ransac.cpp
         universe/math/algorithm/ransac.h
-    )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET xhqm APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
-else()
-    if(ANDROID)
-        add_library(xhqm SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(xhqm
-            ${PROJECT_SOURCES}
-        )
-    endif()
-endif()
-
-target_link_libraries(xhqm PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
-
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
-if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.xhqm)
-endif()
-set_target_properties(xhqm PROPERTIES
-    ${BUNDLE_ID_OPTION}
-    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    MACOSX_BUNDLE TRUE
-    WIN32_EXECUTABLE TRUE
 )
 
-include(GNUInstallDirs)
+
 install(TARGETS xhqm
-    BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    BUNDLE DESTINATION ./build
+    LIBRARY DESTINATION ./public
+    RUNTIME DESTINATION ./public
 )
-
-if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(xhqm)
-endif()
