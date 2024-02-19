@@ -13,6 +13,8 @@ namespace xhqm {
 		//bool
 		template <class> constexpr bool always_true = true;
 		template <class> constexpr bool always_false = false;
+		template <class, class> constexpr bool is_same = false;
+		template <class type> constexpr bool is_same<type, type> = true;
 
 		//¼ÆÊý
 		template<class ...type_arg> constexpr xhqm::size size_count = sizeof...(type_arg);
