@@ -12,7 +12,6 @@
 #define XHQM_UNIVERSE_ALGORITHM
 #define XHQM_UNIVERSE_LIFE
 #define XHQM_UNIVERSE_SOUL
-#define XHQM_UNIVERSE_GAME
 #endif
 
 #include "head.h"
@@ -25,9 +24,11 @@ using namespace xhqm::literals;
 #ifdef XHQM_METACLASS
 #include "metaclass/template.h"
 #include "metaclass/compute.h"
-#include "metaclass/object.h"
-#include "metaclass/symbols_has.h"
 #include "metaclass/class_type.h"
+#include "metaclass/symbols_has.h"
+#include "metaclass/object.h"
+#include "metaclass/tuple.h"
+#include "metaclass/function.h"
 #endif
 
 #ifdef XHQM_CONCEPTION
@@ -63,7 +64,12 @@ using namespace xhqm::literals;
 #endif
 
 #ifdef XHQM_UNIVERSE
-
+//#include "universe/info"
+//#include "universe/math"
+//#include "universe/math/algorithm"
+//#include "universe/space"
+//#include "universe/life"
+//#include "universe/soul"
 #endif
 
 #ifdef XHQM_UNIVERSE_INFO
@@ -97,9 +103,5 @@ using namespace xhqm::literals;
 #endif
 
 #ifdef XHQM_UNIVERSE_SOUL
-
-#endif
-
-#ifdef XHQM_UNIVERSE_GAME
 
 #endif

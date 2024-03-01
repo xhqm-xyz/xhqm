@@ -1,23 +1,39 @@
-#ifndef XHQM_CLASS_TYPE
+ï»¿#ifndef XHQM_CLASS_TYPE
 #define XHQM_CLASS_TYPE
 #include "../head.h"
 namespace xhqm {
 
 	inline namespace templates{
 
-		//ÊÇ·ñÎªÀàÀàĞÍ
+		//æ˜¯å¦ä¸ºæ‹Ÿä¼¼å‡½æ•°
+		template <typename typein, typename is_void = void>
+		struct is_pseudo_s
+		{
+			static constexpr bool value = false;
+		};
+		template <typename typein>
+		struct is_pseudo_s<typein, std::void_t<decltype(&typein::operator())>>
+		{
+			static constexpr bool value = true;
+		};
+		template <typename typein, typename is_void = void> constexpr bool is_pseudo = false;
+		template <typename typein> constexpr bool is_pseudo<typein, std::void_t<decltype(&typein::operator())>>  = true;
+
+
+		//æ˜¯å¦ä¸ºç±»ç±»å‹
 		template<typename type>
 		class is_class {
 		protected:
-            template <typename U>
-            static xhqm::byte_1 _is_class(void* U::*) { return 1; };
+            template <typename U> 
+			static xhqm::byte_1 _is_class(void* U::*) { return 1; };
             template <typename> static xhqm::byte_2 _is_class(...) { return 0; };
 		public:
 			static constexpr bool isvalue = sizeof(_is_class<type>(0)) == sizeof(xhqm::byte_2);
 			static constexpr bool isclass = sizeof(_is_class<type>(0)) == sizeof(xhqm::byte_1);
+			static constexpr bool ispseudo = xhqm::is_pseudo_s<type>::value;
 		};
 
-		//ÀàĞÍ±äÇ¨
+		//ç±»å‹å˜è¿
 		template<class type_in> struct class_type_s {
 			using type = type_in;
 			using type_ptr = type_in*;

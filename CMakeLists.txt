@@ -23,7 +23,7 @@ set(PROJECT_SOURCES
         xhqm.h
 )
 set(PROJECT_SOURCES
-		conception/element.h
+	conception/element.h
         conception/event.h
         conception/exist.h
         conception/plugin.h
@@ -32,11 +32,13 @@ set(PROJECT_SOURCES
         conception/struct.h
 )
 set(PROJECT_SOURCES
-        metaclass/class_type.h
-        metaclass/compute.h
-        metaclass/symbols_has.h
         metaclass/template.h
-        metaclass/tuple.h
+        metaclass/compute.h
+	metaclass/class_type.h
+        metaclass/symbols_has.h
+        metaclass/object.h
+	metaclass/tuple.h
+	metaclass/function.h
 )
 set(PROJECT_SOURCES
         pattern/instance.cpp

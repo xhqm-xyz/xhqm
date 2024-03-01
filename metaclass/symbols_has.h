@@ -1,25 +1,15 @@
-#ifndef XHQM_SYMBOLS_HAS
+﻿#ifndef XHQM_SYMBOLS_HAS
 #define XHQM_SYMBOLS_HAS
 #include "../head.h"
 #include "class_type.h"
 
-
 #define xhqm_symbol_return(symbol) namespace xhqm { template <typename type, typename ...argv_type>	\
-		struct symbol##_in { using return_type = decltype(std::declval<type>().symbol(std::declval<argv_type...>())); }; }
+		struct symbol##_in { using return_type = decltype(std::declval<type>().symbol(std::declval<argv_type>()...)); }; }
 
 #define xhqm_symbols_has(symbol) namespace xhqm {				\
-		template<typename type>		\
-		class symbol##_in_class {	\
-		protected:					\
-			template <typename C>	\
-			static xhqm::byte_1& _has(decltype(&C:: symbol))  { return 1; };	\
-			template <typename> static xhqm::byte_2& _has(...) { return 0; };	\
-		public:																	\
-			static constexpr bool yes = sizeof(_has<type>(0)) == sizeof(xhqm::byte_1);	\
-		};																					\
-		template<typename type>																\
-		static constexpr bool symbol##_in = xhqm::symbol##_in_class<type>::yes;					\
-	}
+		template<typename type, typename is_void = void> struct symbol##_in_class { static constexpr bool yes = false; };		\
+		template<typename type> struct symbol##_in_class<type, std::void_t<decltype(&type::symbol)>> { static constexpr bool yes = true; };		}
+
 
 namespace xhqm {
 

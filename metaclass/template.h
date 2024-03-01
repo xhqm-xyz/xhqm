@@ -1,4 +1,4 @@
-#ifndef XHQM_TEMPLATE
+ï»¿#ifndef XHQM_TEMPLATE
 #define XHQM_TEMPLATE
 #include "../head.h"
 #include <list>
@@ -16,15 +16,16 @@ namespace xhqm {
 		template <class, class> constexpr bool is_same = false;
 		template <class type> constexpr bool is_same<type, type> = true;
 
-		//¼ÆÊý
+		//è®¡æ•°
+		template<class types> struct arg_types_s { using type = types; };
 		template<class ...type_arg> constexpr xhqm::size size_count = sizeof...(type_arg);
 
-		//bool ÀàÐÍÑ¡Ôñ
+		//bool ç±»åž‹é€‰æ‹©
 		template<bool select, class type_1, class type_2> struct select_if { using type = type_1; };
 		template<class type_1, class type_2> struct select_if<false, type_1, type_2> { using type = type_2; };
 		template<bool select, class type_1, class type_2> using select_if_type = typename select_if<select, type_1, type_2>::type;
 
-		//ÏÂ±ê ÀàÐÍÑ¡Ôñ
+		//ä¸‹æ ‡ ç±»åž‹é€‰æ‹©
 		template<xhqm::size select, class type_select, class ...type_arg>
 		struct select_index { using type = typename select_index<select - 1, type_arg...>::type; };
 		template<class type_select, class ...type_arg>
@@ -32,15 +33,15 @@ namespace xhqm {
 		template<xhqm::size select, class ...type_arg>
 		using select_index_type = typename select_index<select, type_arg...>::type;
 
-		//ÀàÐÍÑ¡Ôñ
+		//ç±»åž‹é€‰æ‹©
 		template<xhqm::size select, class ...type_arg> using select_class = select_index_type<select, type_arg...>;
 		template<xhqm::size select, class ...type_arg> using select_function = std::function<select_class<select, type_arg...>>;
 
 
-		////ÈÝÆ÷
+		////å®¹å™¨
 		//template<class type_in> using list = std::list<type_in>;
 		//template<class type_in> using vector = std::vector<type_in>;
-		//³¬ÈÝÆ÷
+		//è¶…å®¹å™¨
 		template<xhqm::size size, class type_in, template<class> class save_type>
         struct docker_s { using type = save_type<typename docker_s<size - 1, type_in, save_type>::type>; };
 		template<class type_in, template<class> class save_type>
@@ -53,9 +54,10 @@ namespace xhqm {
 		template<class type_in, xhqm::size size, template<class> class save_type = std::vector>
 		using docker_more = typename docker_s<size + 1, type_in, save_type>::type;
 
-		////Êý×é
+		
+		////æ•°ç»„
 		//template<class type_in, xhqm::size size> using array = std::array<type_in, size>;
-		//³¬Êý×é
+		//è¶…æ•°ç»„
 		template<class type_in, xhqm::size dim, xhqm::size ...dims>
 		struct hyper_s { using type = std::array<typename hyper_s<type_in, dims...>::type, dim>; };
 		template<class type_in, xhqm::size dim>
@@ -67,21 +69,6 @@ namespace xhqm {
 		using hyper_few = typename hyper_s<type_in, dims...>::type;
 		template<class type_in, xhqm::size dim, xhqm::size ...dims>
 		using hyper_more = typename hyper_s<type_in, 1, dim, dims...>::type;
-
-		//º¯Êý²ð½â
-		template <class type>
-		struct ret_function_args {
-			static_assert(xhqm::always_false<type>, "that is not function.");
-		};
-
-		template <class ret_type, class... arg_types>
-		struct ret_function_args<ret_type(arg_types...)>
-		{
-			using return_type = ret_type;
-			template <xhqm::size index> using type_get
-				= typename xhqm::select_index<index, arg_types...>::type;
-		};
-
 	}
 
 		//template<xhqm::size size> 
