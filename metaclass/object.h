@@ -1,4 +1,4 @@
-#ifndef XHQM_OBJECT
+Ôªø#ifndef XHQM_OBJECT
 #define XHQM_OBJECT
 #include "../head.h"
 #include "../conception/struct.h"
@@ -52,7 +52,7 @@ namespace xhqm
 	protected:
 
 	private:
-		virtual bool init_object() = 0;// πxhqm::object<type>≤ªø…÷±Ω” π”√
+		virtual bool init_object() = 0;//‰Ωøxhqm::object<type>‰∏çÂèØÁõ¥Êé•‰ΩøÁî®
 	public:
 		inline static xhqm::size type_id() { return xhqm::object_info<object_type>::this_id(); };
 		inline static xhqm::string type_name() { return XHQMTOSTR(xhqm::object); };
